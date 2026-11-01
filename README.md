@@ -1,5 +1,36 @@
 # minecraft-stress-test
 
+> **Разработка закрыта.**
+
+Форк [PureGero/minecraft-stress-test](https://github.com/PureGero/minecraft-stress-test): консольная утилита, которая заводит на сервер ботов в offline-mode, и те летают по миру и прогружают чанки. Предназначена для нагрузочного тестирования сервера и запускается отдельно от него.
+
+## Что внутри
+
+- Java 17, Maven, Netty 4.1. Боты сами реализуют протокол Minecraft 1.20.6 (по README upstream).
+- Параметры задаются через `-Dbot.count`, `-Dbot.ip`, `-Dbot.port`, `-Dbot.login.delay.ms`, `-Dbot.radius`, во время работы ботами управляют командами в консоли (`count`, `speed`, `radius`). Подробности в оригинальном README ниже.
+
+## Сборка
+
+```
+mvn
+```
+
+Артефакт: `target/minecraft-stress-test-1.0.0-SNAPSHOT-jar-with-dependencies.jar`. На целевом сервере нужны `online-mode=false` и `allow-flight=true`.
+
+## Зависимости
+
+- `io.netty:netty-all` 4.1.73.Final.
+
+## Что изменено относительно оригинала
+
+Оригинал: [PureGero/minecraft-stress-test](https://github.com/PureGero/minecraft-stress-test).
+
+Своих изменений нет, это копия оригинала на коммите `fb03aa8` (02.05.2024, поддержка 1.20.6). Форк отстаёт от upstream на 13 коммитов и не опережает его ни на один.
+
+## Оригинальный README
+
+# minecraft-stress-test
+
 Automate the stress testing of your 1.20.6 Minecraft server with bots.
 This project will log offline-mode bots into the specified server which will
 fly around and explore the world.
